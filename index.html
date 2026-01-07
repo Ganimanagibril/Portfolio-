@@ -1,550 +1,58 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="GANIMANA Jibrili - Full-Stack Software Developer Portfolio">
-    <meta name="keywords" content="software developer, portfolio, web development, Rwanda">
-    <meta name="author" content="GANIMANA Jibrili">
-    <title>GANIMANA Jibrili | Software Developer Portfolio</title>
-    
-    <style>
-        /* ========== RESET & BASE STYLES ========== */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --dark-color: #2d3748;
-            --light-color: #f7fafc;
-            --text-color: #4a5568;
-            --white: #ffffff;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background: var(--white);
-        }
-        
-        /* ========== NAVIGATION BAR ========== */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: var(--white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            z-index: 1000;
-            padding: 1rem 0;
-        }
-        
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-menu a:hover {
-            color: var(--primary-color);
-        }
-        
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--dark-color);
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        
-        /* ========== HERO SECTION ========== */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: var(--white);
-            text-align: center;
-            padding: 0 2rem;
-            margin-top: 60px;
-        }
-        
-        .hero-content h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
-        }
-        
-        .hero-content .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-            animation: fadeInUp 1s ease 0.2s both;
-        }
-        
-        .hero-content p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            opacity: 0.8;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background: var(--white);
-            color: var(--primary-color);
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.3s, box-shadow 0.3s;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-        
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--white);
-            border: 2px solid var(--white);
-            margin-left: 1rem;
-        }
-        
-        .btn-secondary:hover {
-            background: var(--white);
-            color: var(--primary-color);
-        }
-        
-        /* ========== SECTION STYLES ========== */
-        section {
-            padding: 5rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--dark-color);
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            margin: 1rem auto;
-        }
-        
-        /* ========== ABOUT SECTION ========== */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .about-text h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .about-text p {
-            margin-bottom: 1rem;
-            line-height: 1.8;
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-        }
-        
-        .skill {
-            background: var(--light-color);
-            padding: 1rem;
-            border-radius: 10px;
-            border-left: 4px solid var(--primary-color);
-        }
-        
-        .skill h4 {
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        
-        .tag {
-            background: var(--primary-color);
-            color: var(--white);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        
-        /* ========== PROJECTS SECTION ========== */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        
-        .project-card {
-            background: var(--white);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-        }
-        
-        .project-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 3rem;
-        }
-        
-        .project-content {
-            padding: 1.5rem;
-        }
-        
-        .project-content h3 {
-            color: var(--dark-color);
-            margin-bottom: 0.5rem;
-        }
-        
-        .project-content p {
-            margin-bottom: 1rem;
-            color: var(--text-color);
-        }
-        
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-tag {
-            background: var(--light-color);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 5px;
-            font-size: 0.8rem;
-        }
-        
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .project-link {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        
-        .project-link:hover {
-            color: var(--secondary-color);
-        }
-        
-        /* ========== CONTACT SECTION ========== */
-        .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: var(--light-color);
-            border-radius: 10px;
-        }
-        
-        .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--white);
-            font-size: 1.5rem;
-        }
-        
-        .contact-details h4 {
-            color: var(--dark-color);
-            margin-bottom: 0.3rem;
-        }
-        
-        .contact-details a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        .contact-form {
-            background: var(--light-color);
-            padding: 2rem;
-            border-radius: 10px;
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--dark-color);
-            font-weight: 500;
-        }
-        
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.8rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 5px;
-            font-family: inherit;
-            transition: border-color 0.3s;
-        }
-        
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-        
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-        
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-        
-        .submit-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* ========== FOOTER ========== */
-        footer {
-            background: var(--dark-color);
-            color: var(--white);
-            text-align: center;
-            padding: 2rem;
-        }
-        
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .social-links a {
-            color: var(--white);
-            font-size: 1.5rem;
-            transition: color 0.3s;
-        }
-        
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-        
-        /* ========== ANIMATIONS ========== */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* ========== RESPONSIVE DESIGN ========== */
-        @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 60px;
-                flex-direction: column;
-                background: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 27px rgba(0,0,0,0.05);
-                padding: 2rem 0;
-            }
-            
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .menu-toggle {
-                display: flex;
-            }
-            
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-content .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .btn-secondary {
-                margin-left: 0;
-                margin-top: 1rem;
-            }
-            
-            .about-content,
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
-            
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
+    <title>GANIMANA Jibrili | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     
-    <!-- ========== NAVIGATION ========== -->
+    <!-- NAVIGATION -->
     <nav>
         <div class="nav-container">
             <div class="logo">GJ</div>
-            <div class="menu-toggle" onclick="toggleMenu()">
+            <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" onclick="closeMenu()">Home</a></li>
-                <li><a href="#about" onclick="closeMenu()">About</a></li>
-                <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
-                <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
     
-<!-- ========== HERO SECTION ========== -->
+    <!-- HERO SECTION -->
     <section class="hero" id="home">
-      
         <div class="hero-content">
-            <h1>
-     <img src="FB_IMG_1766060654090.jpg" alt="Your Photo" style="
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 2rem;
-    border: 5px solid white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-">
+            <!-- Profile Photo -->
+            <div class="profile-photo">
+                <img src="images/profile.jpg" alt="GANIMANA Jibrili">
+            </div>
             
-              GANIMANA JIBRILI</h1>
+            <h1>GANIMANA JIBRILI</h1>
             <p class="subtitle">Full-Stack Software Developer</p>
-            <p>I build modern web and mobile applications using JavaScript, React, Flutter, and more. Passionate about creating clean, efficient, and user-friendly solutions.</p>
-            <div>
+            <p>I build modern web and mobile applications using JavaScript, React, Flutter, and more.</p>
+            
+            <div class="hero-buttons">
                 <a href="#projects" class="btn">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get In Touch</a>
             </div>
         </div>
     </section>
     
-    <!-- ========== ABOUT SECTION ========== -->
+    <!-- ABOUT SECTION -->
     <section id="about">
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-text">
                 <h3>Hi, I'm Jibrili</h3>
-                <p>I'm a passionate Full-Stack Software Developer from Rwanda, recently graduated from St Martin Gisenyi TVET School with specialization in Software Development.</p>
-                <p>I specialize in building modern web applications using the latest technologies. My goal is to create innovative solutions that make a difference in people's lives.</p>
-                <p>When I'm not coding, I enjoy learning new technologies, contributing to open-source projects, and helping others learn to code.</p>
+                <p>I'm a passionate Full-Stack Software Developer from Rwanda, recently graduated from St Martin Gisenyi TVET School.</p>
+                <p>I specialize in building modern web applications using the latest technologies.</p>
                 <a href="#contact" class="btn">Hire Me</a>
             </div>
             
@@ -565,7 +73,6 @@
                         <span class="tag">Node.js</span>
                         <span class="tag">PHP</span>
                         <span class="tag">Laravel</span>
-                        <span class="tag">MySQL</span>
                     </div>
                 </div>
                 
@@ -574,7 +81,6 @@
                     <div class="skill-tags">
                         <span class="tag">Flutter</span>
                         <span class="tag">Dart</span>
-                        <span class="tag">Firebase</span>
                     </div>
                 </div>
                 
@@ -583,7 +89,6 @@
                     <div class="skill-tags">
                         <span class="tag">Git</span>
                         <span class="tag">GitHub</span>
-                        <span class="tag">VS Code</span>
                         <span class="tag">Figma</span>
                     </div>
                 </div>
@@ -591,17 +96,19 @@
         </div>
     </section>
     
-    <!-- ========== PROJECTS SECTION ========== -->
-    <section id="projects" style="background: var(--light-color);">
+    <!-- PROJECTS SECTION -->
+    <section id="projects" style="background: #f7fafc;">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-grid">
             
             <!-- Project 1 -->
             <div class="project-card">
-                <div class="project-image">🛒</div>
+                <div class="project-image">
+                    <img src="images/project1.jpg" alt="E-Commerce">
+                </div>
                 <div class="project-content">
                     <h3>E-Commerce Platform</h3>
-                    <p>A full-featured online shopping platform with cart, checkout, and payment integration.</p>
+                    <p>Online shopping platform with cart and payment integration.</p>
                     <div class="project-tech">
                         <span class="tech-tag">React</span>
                         <span class="tech-tag">Node.js</span>
@@ -616,14 +123,15 @@
             
             <!-- Project 2 -->
             <div class="project-card">
-                <div class="project-image">🏫</div>
+                <div class="project-image">
+                    <img src="images/project2.jpg" alt="School System">
+                </div>
                 <div class="project-content">
                     <h3>School Management System</h3>
-                    <p>Web application for managing students, teachers, grades, and attendance.</p>
+                    <p>Managing students, teachers, and grades.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Laravel</span>
                         <span class="tech-tag">MySQL</span>
-                        <span class="tech-tag">Bootstrap</span>
                     </div>
                     <div class="project-links">
                         <a href="https://github.com/Ganimanagibril" class="project-link">GitHub →</a>
@@ -634,10 +142,12 @@
             
             <!-- Project 3 -->
             <div class="project-card">
-                <div class="project-image">📱</div>
+                <div class="project-image">
+                    <img src="images/project3.jpg" alt="Mobile App">
+                </div>
                 <div class="project-content">
                     <h3>Mobile App</h3>
-                    <p>Cross-platform mobile application built with Flutter for iOS and Android.</p>
+                    <p>Cross-platform mobile application with Flutter.</p>
                     <div class="project-tech">
                         <span class="tech-tag">Flutter</span>
                         <span class="tech-tag">Dart</span>
@@ -650,4 +160,84 @@
                 </div>
             </div>
             
-            <!-- Project 4 --
+        </div>
+    </section>
+    
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-details">
+                        <h4>Email</h4>
+                        <a href="mailto:ganimanagibril0@gmail.com">ganimanagibril0@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
+                        <a href="tel:+250799312121">+250 799 312 121</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-details">
+                        <h4>Location</h4>
+                        <p>Rugerero, Rubavu, Rwanda</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-details">
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/Ganimanagibril">github.com/Ganimanagibril</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/Ganimanagibril">💻 GitHub</a>
+            <a href="mailto:ganimanagibril0@gmail.com">📧 Email</a>
+            <a href="tel:+250799312121">📱 Phone</a>
+        </div>
+        <p>&copy; 2025 GANIMANA Jibrili. All rights reserved.</p>
+        <p>Made with ❤️ in Rwanda</p>
+    </footer>
+    
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+</body>
+</html>
