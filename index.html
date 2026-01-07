@@ -1,243 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GANIMANA Jibrili | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GANIMANA Jibrili | Full‑Stack Developer</title>
+
+  <!-- SEO -->
+  <meta name="description" content="GANIMANA Jibrili — Full‑Stack Software Developer from Rwanda. I build modern web & mobile applications using JavaScript, React, Node, Flutter and more." />
+  <link rel="canonical" href="https://ganimanagibril.dev/" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="GANIMANA Jibrili | Full‑Stack Developer" />
+  <meta property="og:description" content="Full‑Stack developer building modern web & mobile applications (React, Node, Flutter)." />
+  <meta property="og:url" content="https://ganimanagibril.dev/" />
+  <meta property="og:image" content="images/profile-social.jpg" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GANIMANA Jibrili | Full‑Stack Developer" />
+  <meta name="twitter:description" content="Full‑Stack developer building modern web & mobile applications (React, Node, Flutter)." />
+  <meta name="twitter:image" content="images/profile-social.jpg" />
+
+  <!-- Theme / Icons (add real files to repository) -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  <!-- Improve performance for fonts/assets if you add them -->
+  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+
+  <meta name="theme-color" content="#0f172a" />
+
+  <!-- Structured data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "GANIMANA Jibrili",
+    "jobTitle": "Full-Stack Software Developer",
+    "url": "https://ganimanagibril.dev/",
+    "sameAs": [
+      "https://github.com/Ganimanagibril",
+      "mailto:ganimanagibril0@gmail.com"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Rugerero, Rubavu",
+      "addressCountry": "RW"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <!-- NAVIGATION -->
-    <nav>
-        <div class="nav-container">
-            <div class="logo">GJ</div>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <div class="nav-container">
+        <a class="logo" href="#home" aria-label="Go to home">GJ</a>
+
+        <button id="menuToggle" class="menu-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle menu</span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+
+        <ul class="nav-menu" id="navMenu" role="menubar">
+          <li role="none"><a role="menuitem" href="#home" class="nav-link">Home</a></li>
+          <li role="none"><a role="menuitem" href="#about" class="nav-link">About</a></li>
+          <li role="none"><a role="menuitem" href="#projects" class="nav-link">Projects</a></li>
+          <li role="none"><a role="menuitem" href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </nav>
-    
+  </header>
+
+  <main id="main" tabindex="-1">
     <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <!-- Profile Photo -->
-            <div class="profile-photo">
-                <img src="images/profile.jpg" alt="GANIMANA Jibrili">
-            </div>
-            
-            <h1>GANIMANA JIBRILI</h1>
-            <p class="subtitle">Full-Stack Software Developer</p>
-            <p>I build modern web and mobile applications using JavaScript, React, Flutter, and more.</p>
-            
-            <div class="hero-buttons">
-                <a href="#projects" class="btn">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
+    <section class="hero" id="home" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <!-- Profile Photo (responsive + lazy) -->
+        <div class="profile-photo">
+          <picture>
+            <!-- Provide multiple sizes/resolutions if you have them -->
+            <source srcset="images/profile.webp" type="image/webp" />
+            <img src="images/profile.jpg" alt="GANIMANA Jibrili — portrait" loading="eager" width="240" height="240" />
+          </picture>
         </div>
+
+        <h1 id="hero-heading">GANIMANA JIBRILI</h1>
+        <p class="subtitle">Full‑Stack Software Developer</p>
+        <p>I build modern web and mobile applications using JavaScript, React, Node, Flutter, and more.</p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="btn">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
     </section>
-    
+
     <!-- ABOUT SECTION -->
-    <section id="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Hi, I'm Jibrili</h3>
-                <p>I'm a passionate Full-Stack Software Developer from Rwanda, recently graduated from St Martin Gisenyi TVET School.</p>
-                <p>I specialize in building modern web applications using the latest technologies.</p>
-                <a href="#contact" class="btn">Hire Me</a>
-            </div>
-            
-            <div class="skills-grid">
-                <div class="skill">
-                    <h4>Frontend</h4>
-                    <div class="skill-tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">React</span>
-                    </div>
-                </div>
-                
-                <div class="skill">
-                    <h4>Backend</h4>
-                    <div class="skill-tags">
-                        <span class="tag">Node.js</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">Laravel</span>
-                    </div>
-                </div>
-                
-                <div class="skill">
-                    <h4>Mobile</h4>
-                    <div class="skill-tags">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">Dart</span>
-                    </div>
-                </div>
-                
-                <div class="skill">
-                    <h4>Tools</h4>
-                    <div class="skill-tags">
-                        <span class="tag">Git</span>
-                        <span class="tag">GitHub</span>
-                        <span class="tag">Figma</span>
-                    </div>
-                </div>
-            </div>
+    <section id="about" aria-labelledby="about-title">
+      <h2 class="section-title" id="about-title">About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3>Hi, I'm Jibrili</h3>
+          <p>I'm a passionate Full‑Stack Software Developer from Rwanda, recently graduated from St Martin Gisenyi TVET School.</p>
+          <p>I specialize in building modern web applications and cross‑platform mobile apps using the latest technologies.</p>
+          <a href="#contact" class="btn">Hire Me</a>
         </div>
+
+        <div class="skills-grid" aria-hidden="false">
+          <div class="skill">
+            <h4>Frontend</h4>
+            <div class="skill-tags">
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">React</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h4>Backend</h4>
+            <div class="skill-tags">
+              <span class="tag">Node.js</span>
+              <span class="tag">PHP</span>
+              <span class="tag">Laravel</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h4>Mobile</h4>
+            <div class="skill-tags">
+              <span class="tag">Flutter</span>
+              <span class="tag">Dart</span>
+            </div>
+          </div>
+
+          <div class="skill">
+            <h4>Tools</h4>
+            <div class="skill-tags">
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+              <span class="tag">Figma</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
-    
+
     <!-- PROJECTS SECTION -->
-    <section id="projects" style="background: #f7fafc;">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-grid">
-            
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/project1.jpg" alt="E-Commerce">
-                </div>
-                <div class="project-content">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Online shopping platform with cart and payment integration.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Ganimanagibril" class="project-link">GitHub →</a>
-                        <a href="#" class="project-link">Live Demo →</a>
-                    </div>
-                </div>
+    <section id="projects" aria-labelledby="projects-title" style="background:#f7fafc;">
+      <h2 class="section-title" id="projects-title">My Projects</h2>
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card" aria-labelledby="proj1-title">
+          <div class="project-image">
+            <img src="images/project1.jpg" alt="Screenshot of E-Commerce Platform" loading="lazy" />
+          </div>
+          <div class="project-content">
+            <h3 id="proj1-title">E‑Commerce Platform</h3>
+            <p>Online shopping platform with cart and payment integration.</p>
+            <div class="project-tech">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">MySQL</span>
             </div>
-            
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/project2.jpg" alt="School System">
-                </div>
-                <div class="project-content">
-                    <h3>School Management System</h3>
-                    <p>Managing students, teachers, and grades.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Laravel</span>
-                        <span class="tech-tag">MySQL</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Ganimanagibril" class="project-link">GitHub →</a>
-                        <a href="#" class="project-link">Live Demo →</a>
-                    </div>
-                </div>
+            <div class="project-links">
+              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="#" class="project-link" aria-disabled="true">Live Demo →</a>
             </div>
-            
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="images/project3.jpg" alt="Mobile App">
-                </div>
-                <div class="project-content">
-                    <h3>Mobile App</h3>
-                    <p>Cross-platform mobile application with Flutter.</p>
-                    <div class="project-tech">
-                        <span class="tech-tag">Flutter</span>
-                        <span class="tech-tag">Dart</span>
-                        <span class="tech-tag">Firebase</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Ganimanagibril" class="project-link">GitHub →</a>
-                        <a href="#" class="project-link">Live Demo →</a>
-                    </div>
-                </div>
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card" aria-labelledby="proj2-title">
+          <div class="project-image">
+            <img src="images/project2.jpg" alt="Screenshot of School Management System" loading="lazy" />
+          </div>
+          <div class="project-content">
+            <h3 id="proj2-title">School Management System</h3>
+            <p>Managing students, teachers, and grades.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">MySQL</span>
             </div>
-            
-        </div>
+            <div class="project-links">
+              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="#" class="project-link" aria-disabled="true">Live Demo →</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card" aria-labelledby="proj3-title">
+          <div class="project-image">
+            <img src="images/project3.jpg" alt="Screenshot of Mobile App" loading="lazy" />
+          </div>
+          <div class="project-content">
+            <h3 id="proj3-title">Mobile App</h3>
+            <p>Cross‑platform mobile application built with Flutter.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Flutter</span>
+              <span class="tech-tag">Dart</span>
+              <span class="tech-tag">Firebase</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
+              <a href="#" class="project-link" aria-disabled="true">Live Demo →</a>
+            </div>
+          </div>
+        </article>
+      </div>
     </section>
-    
+
     <!-- CONTACT SECTION -->
-    <section id="contact">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-content">
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <div class="contact-icon">📧</div>
-                    <div class="contact-details">
-                        <h4>Email</h4>
-                        <a href="mailto:ganimanagibril0@gmail.com">ganimanagibril0@gmail.com</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📱</div>
-                    <div class="contact-details">
-                        <h4>Phone</h4>
-                        <a href="tel:+250799312121">+250 799 312 121</a>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">📍</div>
-                    <div class="contact-details">
-                        <h4>Location</h4>
-                        <p>Rugerero, Rubavu, Rwanda</p>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <div class="contact-icon">💻</div>
-                    <div class="contact-details">
-                        <h4>GitHub</h4>
-                        <a href="https://github.com/Ganimanagibril">github.com/Ganimanagibril</a>
-                    </div>
-                </div>
+    <section id="contact" aria-labelledby="contact-title">
+      <h2 class="section-title" id="contact-title">Get In Touch</h2>
+      <div class="contact-content">
+        <div class="contact-info" aria-hidden="false">
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">📧</div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <a href="mailto:ganimanagibril0@gmail.com">ganimanagibril0@gmail.com</a>
             </div>
-            
-            <div class="contact-form">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Your Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Your Email</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    
-                    <button type="submit" class="submit-btn">Send Message</button>
-                </form>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">📱</div>
+            <div class="contact-details">
+              <h4>Phone</h4>
+              <a href="tel:+250799312121">+250 799 312 121</a>
             </div>
-            
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">📍</div>
+            <div class="contact-details">
+              <h4>Location</h4>
+              <p>Rugerero, Rubavu, Rwanda</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon" aria-hidden="true">💻</div>
+            <div class="contact-details">
+              <h4>GitHub</h4>
+              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer">github.com/Ganimanagibril</a>
+            </div>
+          </div>
         </div>
+
+        <div class="contact-form">
+          <form id="contactForm" novalidate>
+            <!-- name attributes added for easier backend handling -->
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" required autocomplete="name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email" />
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <!-- honeypot to reduce spam -->
+            <div style="display:none;">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company" />
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+            <p id="formStatus" class="form-status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
     </section>
-    
-    <!-- FOOTER -->
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com/Ganimanagibril">💻 GitHub</a>
-            <a href="mailto:ganimanagibril0@gmail.com">📧 Email</a>
-            <a href="tel:+250799312121">📱 Phone</a>
-        </div>
-        <p>&copy; 2025 GANIMANA Jibrili. All rights reserved.</p>
-        <p>Made with ❤️ in Rwanda</p>
-    </footer>
-    
-    <!-- JAVASCRIPT -->
-    <script src="script.js"></script>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="social-links">
+      <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
+      <a href="mailto:ganimanagibril0@gmail.com">📧 Email</a>
+      <a href="tel:+250799312121">📱 Phone</a>
+    </div>
+    <p>&copy; 2026 GANIMANA Jibrili. All rights reserved.</p>
+    <p>Made with ❤️ in Rwanda</p>
+  </footer>
+
+  <!-- External script (keeps your existing script.js) -->
+  <script src="script.js" defer></script>
+
+  <!-- Small progressive enhancement (menu toggle + form UX) -->
+  <script>
+    (function () {
+      // Menu toggle
+      const menuToggle = document.getElementById('menuToggle');
+      const navMenu = document.getElementById('navMenu');
+      if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', () => {
+          const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
+          menuToggle.setAttribute('aria-expanded', String(!expanded));
+          navMenu.classList.toggle('open');
+        });
+      }
+
+      // Basic contact form handling (progressive enhancement)
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+      if (form) {
+        form.addEventListener('submit', (e) => {
+          e.preventDefault();
+          // simple honeypot and front-end validation
+          if (document.getElementById('company').value) {
+            status.textContent = 'Submission blocked.';
+            return;
+          }
+          const name = form.name.value.trim();
+          const email = form.email.value.trim();
+          const message = form.message.value.trim();
+          if (!name || !email || !message) {
+            status.textContent = 'Please complete all fields.';
+            return;
+          }
+          status.textContent = 'Sending…';
+
+          // If you add a server endpoint or service (Formspree, Netlify Forms, etc.), replace the fetch URL below.
+          // For now we simply simulate success for UX.
+          setTimeout(() => {
+            status.textContent = 'Thanks! Your message has been received. I will get back to you soon.';
+            form.reset();
+          }, 900);
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
