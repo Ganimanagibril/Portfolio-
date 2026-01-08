@@ -1,351 +1,282 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>GANIMANA Jibrili | Full‑Stack Developer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GANIMANA Jibrili | Full Stack Developer</title>
 
-  <!-- SEO -->
-  <meta name="description" content="GANIMANA Jibrili — Full‑Stack Software Developer from Rwanda. I build modern web & mobile applications using JavaScript, React, Node, Flutter and more." />
-  <link rel="canonical" href="https://ganimanagibril.dev/" />
-
-  <!-- Open Graph / Social -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="GANIMANA Jibrili | Full‑Stack Developer" />
-  <meta property="og:description" content="Full‑Stack developer building modern web & mobile applications (React, Node, Flutter)." />
-  <meta property="og:url" content="https://ganimanagibril.dev/" />
-  <meta property="og:image" content="images/profile-social.jpg" />
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="GANIMANA Jibrili | Full‑Stack Developer" />
-  <meta name="twitter:description" content="Full‑Stack developer building modern web & mobile applications (React, Node, Flutter)." />
-  <meta name="twitter:image" content="images/profile-social.jpg" />
-
-  <!-- Theme / Icons (add real files to repository) -->
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-
-  <!-- Improve performance for fonts/assets if you add them -->
-  <!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
-
-  <meta name="theme-color" content="#0f172a" />
-
-  <!-- Structured data (Person) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "GANIMANA Jibrili",
-    "jobTitle": "Full-Stack Software Developer",
-    "url": "https://ganimanagibril.dev/",
-    "sameAs": [
-      "https://github.com/Ganimanagibril",
-      "mailto:ganimanagibril0@gmail.com"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Rugerero, Rubavu",
-      "addressCountry": "RW"
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
     }
-  }
-  </script>
 
-  <link rel="stylesheet" href="style.css" />
+    body {
+      background: #0f172a;
+      color: #e5e7eb;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #020617;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 18px;
+      color: #38bdf8;
+    }
+
+    .hamburger {
+      font-size: 26px;
+      cursor: pointer;
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 60px;
+      right: -100%;
+      width: 220px;
+      height: 100vh;
+      background: #020617;
+      padding: 30px 20px;
+      transition: right 0.3s ease;
+    }
+
+    nav.active {
+      right: 0;
+    }
+
+    nav a {
+      display: block;
+      margin-bottom: 20px;
+      font-size: 16px;
+      color: #94a3b8;
+    }
+
+    nav a:hover {
+      color: #38bdf8;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 90px 20px 60px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      text-align: center;
+    }
+
+    .hero img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+      margin-bottom: 15px;
+      object-fit: cover;
+    }
+
+    .hero h2 {
+      font-size: 28px;
+    }
+
+    .hero p {
+      color: #94a3b8;
+      margin-top: 5px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      color: #cbd5f5;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    /* ===== SKILLS ===== */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      text-align: center;
+    }
+
+    .skill {
+      background: #020617;
+      padding: 15px;
+      border-radius: 10px;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .project {
+      background: #020617;
+      border-radius: 12px;
+      padding: 15px;
+    }
+
+    .project img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin-bottom: 10px;
+      color: #94a3b8;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* ===== DESKTOP ===== */
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+
+      nav {
+        position: static;
+        height: auto;
+        width: auto;
+        display: flex;
+        gap: 20px;
+        background: none;
+        padding: 0;
+        right: 0;
+      }
+
+      nav a {
+        margin: 0;
+      }
+
+      section {
+        padding-top: 120px;
+      }
+
+      .projects {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- NAVIGATION -->
-  <header>
-    <nav class="site-nav" aria-label="Primary navigation">
-      <div class="nav-container">
-        <a class="logo" href="#home" aria-label="Go to home">GJ</a>
+<header>
+  <h1>GJ</h1>
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+  <nav id="menu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#skills" onclick="toggleMenu()">Skills</a>
+    <a href="#projects" onclick="toggleMenu()">Projects</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </nav>
+</header>
 
-        <button id="menuToggle" class="menu-toggle" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle menu</span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </button>
+<section id="home" class="hero">
+  <img src="my photo.jpg" alt="GANIMANA Jibrili">
+  <h2>GANIMANA Jibrili</h2>
+  <p>Full-Stack Software Developer</p>
+</section>
 
-        <ul class="nav-menu" id="navMenu" role="menubar">
-          <li role="none"><a role="menuitem" href="#home" class="nav-link">Home</a></li>
-          <li role="none"><a role="menuitem" href="#about" class="nav-link">About</a></li>
-          <li role="none"><a role="menuitem" href="#projects" class="nav-link">Projects</a></li>
-          <li role="none"><a role="menuitem" href="#contact" class="nav-link">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
-  </header>
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    Passionate Full-Stack Software Developer specializing in modern web and mobile
+    applications. Experienced with JavaScript ecosystem, Laravel, Flutter and
+    database-driven systems. Focused on clean code and real-world solutions.
+  </p>
+</section>
 
-  <main id="main" tabindex="-1">
-    <!-- HERO SECTION -->
-    <section class="hero" id="home" aria-labelledby="hero-heading">
-      <div class="hero-content">
-        <!-- Profile Photo (responsive + lazy) -->
-        <div class="profile-photo">
-          <picture>
-            <!-- Provide multiple sizes/resolutions if you have them -->
-            <source srcset="images/profile.webp" type="image/webp" />
-            <img src="images/profile.jpg" alt="GANIMANA Jibrili — portrait" loading="eager" width="240" height="240" />
-          </picture>
-        </div>
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills">
+    <div class="skill">JavaScript</div>
+    <div class="skill">React</div>
+    <div class="skill">Node.js</div>
+    <div class="skill">PHP</div>
+    <div class="skill">Laravel</div>
+    <div class="skill">Flutter</div>
+    <div class="skill">MySQL</div>
+    <div class="skill">Git & GitHub</div>
+  </div>
+</section>
 
-        <h1 id="hero-heading">GANIMANA JIBRILI</h1>
-        <p class="subtitle">Full‑Stack Software Developer</p>
-        <p>I build modern web and mobile applications using JavaScript, React, Node, Flutter, and more.</p>
-
-        <div class="hero-buttons">
-          <a href="#projects" class="btn">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about" aria-labelledby="about-title">
-      <h2 class="section-title" id="about-title">About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <h3>Hi, I'm Jibrili</h3>
-          <p>I'm a passionate Full‑Stack Software Developer from Rwanda, recently graduated from St Martin Gisenyi TVET School.</p>
-          <p>I specialize in building modern web applications and cross‑platform mobile apps using the latest technologies.</p>
-          <a href="#contact" class="btn">Hire Me</a>
-        </div>
-
-        <div class="skills-grid" aria-hidden="false">
-          <div class="skill">
-            <h4>Frontend</h4>
-            <div class="skill-tags">
-              <span class="tag">HTML5</span>
-              <span class="tag">CSS3</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">React</span>
-            </div>
-          </div>
-
-          <div class="skill">
-            <h4>Backend</h4>
-            <div class="skill-tags">
-              <span class="tag">Node.js</span>
-              <span class="tag">PHP</span>
-              <span class="tag">Laravel</span>
-            </div>
-          </div>
-
-          <div class="skill">
-            <h4>Mobile</h4>
-            <div class="skill-tags">
-              <span class="tag">Flutter</span>
-              <span class="tag">Dart</span>
-            </div>
-          </div>
-
-          <div class="skill">
-            <h4>Tools</h4>
-            <div class="skill-tags">
-              <span class="tag">Git</span>
-              <span class="tag">GitHub</span>
-              <span class="tag">Figma</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- PROJECTS SECTION -->
-    <section id="projects" aria-labelledby="projects-title" style="background:#f7fafc;">
-      <h2 class="section-title" id="projects-title">My Projects</h2>
-      <div class="projects-grid">
-        <!-- Project 1 -->
-        <article class="project-card" aria-labelledby="proj1-title">
-          <div class="project-image">
-            <img src="images/project1.jpg" alt="Screenshot of E-Commerce Platform" loading="lazy" />
-          </div>
-          <div class="project-content">
-            <h3 id="proj1-title">E‑Commerce Platform</h3>
-            <p>Online shopping platform with cart and payment integration.</p>
-            <div class="project-tech">
-              <span class="tech-tag">React</span>
-              <span class="tech-tag">Node.js</span>
-              <span class="tech-tag">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-              <a href="#" class="project-link" aria-disabled="true">Live Demo →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 2 -->
-        <article class="project-card" aria-labelledby="proj2-title">
-          <div class="project-image">
-            <img src="images/project2.jpg" alt="Screenshot of School Management System" loading="lazy" />
-          </div>
-          <div class="project-content">
-            <h3 id="proj2-title">School Management System</h3>
-            <p>Managing students, teachers, and grades.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Laravel</span>
-              <span class="tech-tag">MySQL</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-              <a href="#" class="project-link" aria-disabled="true">Live Demo →</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- Project 3 -->
-        <article class="project-card" aria-labelledby="proj3-title">
-          <div class="project-image">
-            <img src="images/project3.jpg" alt="Screenshot of Mobile App" loading="lazy" />
-          </div>
-          <div class="project-content">
-            <h3 id="proj3-title">Mobile App</h3>
-            <p>Cross‑platform mobile application built with Flutter.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Flutter</span>
-              <span class="tech-tag">Dart</span>
-              <span class="tech-tag">Firebase</span>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer" class="project-link">GitHub →</a>
-              <a href="#" class="project-link" aria-disabled="true">Live Demo →</a>
-            </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- CONTACT SECTION -->
-    <section id="contact" aria-labelledby="contact-title">
-      <h2 class="section-title" id="contact-title">Get In Touch</h2>
-      <div class="contact-content">
-        <div class="contact-info" aria-hidden="false">
-          <div class="contact-item">
-            <div class="contact-icon" aria-hidden="true">📧</div>
-            <div class="contact-details">
-              <h4>Email</h4>
-              <a href="mailto:ganimanagibril0@gmail.com">ganimanagibril0@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon" aria-hidden="true">📱</div>
-            <div class="contact-details">
-              <h4>Phone</h4>
-              <a href="tel:+250799312121">+250 799 312 121</a>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon" aria-hidden="true">📍</div>
-            <div class="contact-details">
-              <h4>Location</h4>
-              <p>Rugerero, Rubavu, Rwanda</p>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon" aria-hidden="true">💻</div>
-            <div class="contact-details">
-              <h4>GitHub</h4>
-              <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer">github.com/Ganimanagibril</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-form">
-          <form id="contactForm" novalidate>
-            <!-- name attributes added for easier backend handling -->
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" required autocomplete="name" />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" required autocomplete="email" />
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-            </div>
-
-            <!-- honeypot to reduce spam -->
-            <div style="display:none;">
-              <label for="company">Company</label>
-              <input type="text" id="company" name="company" />
-            </div>
-
-            <button type="submit" class="submit-btn">Send Message</button>
-            <p id="formStatus" class="form-status" aria-live="polite"></p>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="social-links">
-      <a href="https://github.com/Ganimanagibril" target="_blank" rel="noopener noreferrer">💻 GitHub</a>
-      <a href="mailto:ganimanagibril0@gmail.com">📧 Email</a>
-      <a href="tel:+250799312121">📱 Phone</a>
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project">
+      <img src="e-commerce platform.jpg" alt="E-commerce">
+      <h3>E-Commerce Platform</h3>
+      <p>React • Node.js • MySQL</p>
     </div>
-    <p>&copy; 2026 GANIMANA Jibrili. All rights reserved.</p>
-    <p>Made with ❤️ in Rwanda</p>
-  </footer>
 
-  <!-- External script (keeps your existing script.js) -->
-  <script src="script.js" defer></script>
+    <div class="project">
+      <img src="school management system.jpg" alt="School System">
+      <h3>School Management System</h3>
+      <p>Laravel • MySQL</p>
+    </div>
 
-  <!-- Small progressive enhancement (menu toggle + form UX) -->
-  <script>
-    (function () {
-      // Menu toggle
-      const menuToggle = document.getElementById('menuToggle');
-      const navMenu = document.getElementById('navMenu');
-      if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
-          const expanded = menuToggle.getAttribute('aria-expanded') === 'true';
-          menuToggle.setAttribute('aria-expanded', String(!expanded));
-          navMenu.classList.toggle('open');
-        });
-      }
+    <div class="project">
+      <img src="mobile app.jpg" alt="Mobile App">
+      <h3>Mobile App</h3>
+      <p>Flutter • Firebase</p>
+    </div>
+  </div>
+</section>
 
-      // Basic contact form handling (progressive enhancement)
-      const form = document.getElementById('contactForm');
-      const status = document.getElementById('formStatus');
-      if (form) {
-        form.addEventListener('submit', (e) => {
-          e.preventDefault();
-          // simple honeypot and front-end validation
-          if (document.getElementById('company').value) {
-            status.textContent = 'Submission blocked.';
-            return;
-          }
-          const name = form.name.value.trim();
-          const email = form.email.value.trim();
-          const message = form.message.value.trim();
-          if (!name || !email || !message) {
-            status.textContent = 'Please complete all fields.';
-            return;
-          }
-          status.textContent = 'Sending…';
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <p>Email: ganimanagibril0@gmail.com</p>
+  <p>Phone: +250 799 312 121</p>
+  <p>GitHub: github.com/Ganimanagibril</p>
+</section>
 
-          // If you add a server endpoint or service (Formspree, Netlify Forms, etc.), replace the fetch URL below.
-          // For now we simply simulate success for UX.
-          setTimeout(() => {
-            status.textContent = 'Thanks! Your message has been received. I will get back to you soon.';
-            form.reset();
-          }, 900);
-        });
-      }
-    })();
-  </script>
+<footer>
+  © 2026 GANIMANA Jibrili
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("active");
+  }
+</script>
+
 </body>
 </html>
